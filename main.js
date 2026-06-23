@@ -427,11 +427,13 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 break;
             case userMessage.startsWith('.warnings'):
                 const mentionedJidListWarnings = message.message.extendedTextMessage?.contextInfo?.mentionedJid || [];
-                await warningsCommand(sock, chatId, mentionedJidListWarnings);
+                const isMentionedAll = userMessage.split(" ")[1] == "all"
+                await warningsCommand(sock, chatId, mentionedJidListWarnings, isMentionedAll);
                 break;
             case userMessage.startsWith('.warn'):
                 const mentionedJidListWarn = message.message.extendedTextMessage?.contextInfo?.mentionedJid || [];
-                await warnCommand(sock, chatId, senderId, mentionedJidListWarn, message);
+                const warnText = userMessage.split(" ").splice(2).join(" ") || "None"
+                await warnCommand(sock, chatId, senderId, mentionedJidListWarn, message, warnText);
                 break;
             case userMessage.startsWith('.tts'):
                 const text = userMessage.slice(4).trim();
