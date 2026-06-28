@@ -5,7 +5,7 @@ async function ownerCommand(sock, chatId) {
 BEGIN:VCARD
 VERSION:3.0
 FN:${settings.botOwner}
-TEL;waid=${settings.ownerNumber}:${settings.ownerNumber}
+TEL;waid=${settings.realNumber}:${settings.realNumber}
 END:VCARD
 `;
 

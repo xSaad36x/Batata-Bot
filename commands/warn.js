@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const isAdmin = require('../lib/isAdmin');
-const config = require("../config")
+const config = require("../config");
+const { settings } = require('../settings');
 
 const WARN_LIMIT = config.WARN_COUNT
 // Define paths
@@ -77,7 +78,13 @@ async function warnCommand(sock, chatId, senderId, mentionedJids, message, warnT
             });
             return;
         }
-
+        // block warning for the owner 
+        if (userToWarn === settings.realNumber) {
+            await sock.sendMessage(chatId, {
+                text: '❌ You cannot warn the Owner!'
+            });
+            return;
+        }
         // Add delay to avoid rate limiting
         await new Promise(resolve => setTimeout(resolve, 1000));
 

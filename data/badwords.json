@@ -1,0 +1,19 @@
+{
+    "badWords": [
+    "fuck", "fucker", "motherfucker", "fck", "fuk", "f*ck", "f@ck",
+    "bitch", "btch", "b!tch", "bastard", "asshole", "a**hole", "a$$", "s***head", "dick", "d!ck", "pussy", "cunt", 
+    "twat", "wanker", "whore", "slut", "skank", "porn", "sex", "xxx", "hentai",
+    "fag", "faggot", "nigga", "n!gga", "retard",
+
+    "قلاوي", "قلاويك", "زبي", "الزبي", "طبون", "الطبون",
+    "قحبة", "القحبة", "قحاب", "الزامل", "زامل", "طيز",
+    "شرموطة", "حوا", "تحوا",
+     "تقود", "دينمك", "دين مك", "طبابن",
+
+    "qlawi", "9lawi", "zbi", "lzbi", "97ba", "tabon", "taboun", 
+    "9ahba", "qahba", "l9ahba",
+    "zamel", "lzamel", "zaml", "7wa", "t7wa",
+    "sharmota", "sharmouta", "mnyk", "mnyka", "mniak", "t9wd", "tqwd", "din mok", "dinmk", "dnmk", "nmk",
+    "w9", "w10"
+]
+}

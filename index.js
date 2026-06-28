@@ -47,7 +47,19 @@ const { join } = require('path')
 
 // Import lightweight store
 const store = require('./lib/lightweight_store')
-
+try {
+    // 1. Read the badWords.json file
+    const badWordsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/badwords.json'), 'utf-8'));
+    
+    // 2. Assign the Set to the global object so it's accessible across all files
+    global.badWordsSet = new Set(badWordsData.badWords);
+    
+    console.log(`✅ Loaded ${global.badWordsSet.size} bad words into global scope.`);
+} catch (error) {
+    console.error("❌ Failed to load badWords.json:", error.message);
+    // Fallback to an empty Set to prevent the bot from crashing if the file is missing
+    global.badWordsSet = new Set();
+}
 // Initialize store
 store.readFromFile()
 const settings = require('./settings')

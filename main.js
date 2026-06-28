@@ -1101,6 +1101,10 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage.startsWith('.quote'):
             case userMessage.startsWith('.loli'):
                 {
+                    return await sock.sendMessage(chatId, {
+                    text: "❌ This command is disabled by owner."
+                    });
+                    // disabled
                     const parts = userMessage.trim().split(/\s+/);
                     let sub = parts[0].slice(1);
                     if (sub === 'facepalm') sub = 'face-palm';
