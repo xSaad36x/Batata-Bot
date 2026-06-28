@@ -78,7 +78,7 @@ async function warnCommand(sock, chatId, senderId, mentionedJids, message, warnT
             });
             return;
         }
-        // block warning for the owner 
+        // OWNER PROTECTION: block warnings that target the Owner 
         if (userToWarn === settings.realNumber) {
             await sock.sendMessage(chatId, {
                 text: '❌ You cannot warn the Owner!'
