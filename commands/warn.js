@@ -115,7 +115,6 @@ async function warnCommand(
           warningsDetails: [],
           message: message.message.conversation,
         };
-      console.log(senderId);
       const warnedBy = senderId.split("@")[0];
       const currentDate = new Date().toLocaleString();
       warnings[chatId][userToWarn]["warnCount"]++;
